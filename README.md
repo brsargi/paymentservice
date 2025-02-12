@@ -29,6 +29,11 @@ To get the application running with Docker Compose, follow the steps below:
     ```bash
     docker-compose up
     ```
+3. Stop the services:
+
+    ```bash
+    docker-compose down
+    ```
 
 ### Service URLs
 
