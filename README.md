@@ -20,7 +20,7 @@ To get the application running with Docker Compose, follow the steps below:
 1. Clone the repository:
 
     ```bash
-    git clone git@github.com:brsargi/paymentservice.git
+    git clone https://github.com/brsargi/paymentservice.git
     cd paymentservice
     ```
 
