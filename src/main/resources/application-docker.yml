@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: PaymentService
+  datasource:
+    url: jdbc:postgresql://db:5432/payment-service
+    username: user
+    password: password
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  flyway:
+    enabled: true
+    url: jdbc:postgresql://db:5432/payment-service
+    user: user
+    password: password
+    locations: classpath:db/migration
+  rabbitmq:
+    host: rabbitmq
+    port: 5672
+    username: guest
+    password: guest
+    listener:
+      simple:
+        auto-declare: true
+logging:
+  pattern:
+    correlation: "[${spring.application.name:},%X{traceId:-},%X{spanId:-}] "
+  include-application-name: false
+  structured:
+    format:
+      console: ecs
+management:
+  tracing:
+    sampling:
+      probability: 1.0
